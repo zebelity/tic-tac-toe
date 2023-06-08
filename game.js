@@ -1,4 +1,4 @@
-
+const body = document.querySelector(".wrapperBtn")
 const cells = document.querySelectorAll("#board .data-cell");
 const message = document.querySelector("#message");
 const playAgainBtn = document.querySelector(".playAgain")
@@ -18,17 +18,17 @@ const boardWinning = [
   [2, 4, 6]
 ];
 
-const player1 = {
-  name: "The Player1"
+let player1 = {
+  name: "The Player1",
+  score: 0
 }
-const player2 = {
-  name: "The Player2"
+let player2 = {
+  name: "The Player2",
+  score: 0
 }
 
 let currentPlayer = player1.name;
 player.innerText = `Current Player: ${currentPlayer}`
-let scoresP1 = 0
-let scoresP2 = 0
 
 for (const cell of cells) {
   cell.addEventListener("click", handleClick)
@@ -60,11 +60,15 @@ function handleClick(event) {
       message.textContent = `It's Draw!!`
       playAgainBtn.style.display = " block"
       resetBtn.style.display = " block"
+      body.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
+      body.style.position = "fixed"
     } else {
       message.textContent = `${result.name} wins!`;
       handleScore()
       playAgainBtn.style.display = " block"
       resetBtn.style.display = " block"
+      body.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
+      body.style.position = "fixed"
     // Disable further cell clicks or take any other necessary action
     }
     
@@ -98,11 +102,11 @@ function checkWinner() {
 
 function handleScore(event) {
   if (message.textContent === `The Player1 wins!`) {
-    scoresP1 = scoresP1 + 1
-    p1Score.textContent = scoresP1
+    player1.score = player1.score + 1
+    p1Score.textContent = player1.score
   } else {
-    scoresP2 = scoresP2 + 1
-    p2Score.textContent = scoresP2
+    player2.score = player2.score + 1
+    p2Score.textContent = player2.score
   }
 }
 
@@ -115,14 +119,16 @@ function handlePlayAgain(event) {
     clearCell.remove("selected2")
   }
   message.textContent = ""
+  body.style.backgroundColor = "none"
+  body.style.position = "relative"
 }
 
 function handleReset(event) {
   //reset score
-  scoresP1 = 0
-  scoresP2 = 0
-  p1Score.textContent = scoresP1
-  p2Score.textContent = scoresP2
+  player1.score = 0
+  player2.score = 0
+  p1Score.textContent = player1.score
+  p2Score.textContent = player2.score
   handlePlayAgain()
   currentPlayer = player1.name
   player.innerText = `Current Player: ${currentPlayer}`

@@ -38,12 +38,11 @@ resetBtn.addEventListener("click",handleReset)
 
 function handleClick(event) {
   const targetCell = event.target
-  
-  //to check cell available
+
   if (targetCell.classList.contains("selected1")||targetCell.classList.contains("selected2")) {
     return;
   }
-  //player choose the cell
+  
   if (currentPlayer === player1.name) {
     targetCell.classList.add("selected1")
     currentPlayer = player2.name
@@ -56,24 +55,18 @@ function handleClick(event) {
 
   let result = checkWinner()
   if (result) {
+    message.style.backgroundColor = "#fbf8cc"
+    playAgainBtn.style.display = " block"
+    resetBtn.style.display = " block"
+    body.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
+    body.style.position = "fixed"
     if (result === 'draw') {
       message.textContent = `It's Draw!!`
-      playAgainBtn.style.display = " block"
-      resetBtn.style.display = " block"
-      body.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
-      body.style.position = "fixed"
     } else {
       message.textContent = `${result.name} wins!`;
       handleScore()
-      playAgainBtn.style.display = " block"
-      resetBtn.style.display = " block"
-      body.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
-      body.style.position = "fixed"
-    // Disable further cell clicks or take any other necessary action
     }
-    
   }
-  
 }
 
 function checkWinner() {
@@ -119,12 +112,12 @@ function handlePlayAgain(event) {
     clearCell.remove("selected2")
   }
   message.textContent = ""
+  message.style.backgroundColor = "transparent"
   body.style.backgroundColor = "none"
   body.style.position = "relative"
 }
 
 function handleReset(event) {
-  //reset score
   player1.score = 0
   player2.score = 0
   p1Score.textContent = player1.score

@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red; 
 }
 
 body {
@@ -11,11 +10,11 @@ body {
 
 header {
   text-align: center ;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
 }
 
 img {
-  width: 30%;
+  width: 50%;
 }
 
 h1 {
@@ -39,9 +38,18 @@ h3 {
 }
 
 h4, p {
-  font-size: 26px;
+  font-size: 28px;
   margin: 3px auto ;
   letter-spacing: 2px;
+}
+
+.charactor {
+  display: flex;
+  justify-content: space-around;
+}
+
+.charactor img {
+  width: 200px;
 }
 
 section {
@@ -63,9 +71,10 @@ p {
 }
 
 .wrapperBtn {
-  display: flexbox;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
@@ -76,17 +85,16 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  width: 300px;
+  width: 400px;
   margin: 20px auto;
 }
 
 .data-cell {
   background-color: #fbf8cc;
   border: 1px solid #ccc;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  font-size: 48px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
   cursor: pointer;
 }
 
@@ -101,13 +109,18 @@ p {
 }
 
 #message {
-  margin-top: 20px;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  color: #f77f00;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .playAgain, .reset{
-  display: block;
+  display: none;
   font-family: 'Londrina Shadow', cursive;
   font-family: 'Londrina Solid', cursive;
   background-color: #eaf4f4;
@@ -115,7 +128,7 @@ p {
   font-size: 26px;
   border: 2px solid #cb997e;
   letter-spacing: 1px;
-  padding: 5px;
-  margin: 0 10px 0 10px
+  padding: 10px;
+  margin: 10px 0 10px 0
 }
 

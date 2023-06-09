@@ -10,7 +10,7 @@ This is a Tic Tac Toe game implemented in JavaScript, HTML, and CSS. It allows t
 This site was built using [GitHub Pages](https://zebelity.github.io/tic-tac-toe/).
 
 ### Features
-[Screenshot of game feature](/../main/assets/images/TicTactoe_display.jpeg)
+[Screenshot of game feature](https://i.imgur.com/33QG0yK.jpg)
 
 - Two players can play the game.
 - The game board is displayed on the web page.
@@ -46,4 +46,4 @@ This function is responsible for checking if a player has won the game. It exami
 
 This function is resets the game board, clears player scores, and prepares the game for a new round.
 
-Enjoy playing the Tic Tac Toe game!
+*Enjoy playing the Tic Tac Toe game!*

@@ -1,8 +1,8 @@
 const body = document.querySelector(".wrapperBtn")
 const cells = document.querySelectorAll("#board .data-cell");
+const player = document.querySelector("h4")
 const message = document.querySelector("#message");
 const playAgainBtn = document.querySelector(".playAgain")
-const player = document.querySelector("h4")
 const resetBtn = document.querySelector(".reset")
 let p1Score = document.querySelector(".p1Score")
 let p2Score = document.querySelector(".p2Score")
@@ -34,7 +34,7 @@ for (const cell of cells) {
   cell.addEventListener("click", handleClick)
 }
 playAgainBtn.addEventListener("click", handlePlayAgain)
-resetBtn.addEventListener("click",handleReset)
+resetBtn.addEventListener("click", handleReset)
 
 function handleClick(event) {
   const targetCell = event.target
@@ -76,11 +76,11 @@ function checkWinner() {
     const cellB = cells[indexB];
     const cellC = cells[indexC];
     
-    if ( cellA.classList.contains("selected1") &&
+    if (cellA.classList.contains("selected1") &&
         cellB.classList.contains("selected1") &&
         cellC.classList.contains("selected1")) {
       return player1;
-    } else if ( cellA.classList.contains("selected2") &&
+    } else if (cellA.classList.contains("selected2") &&
         cellB.classList.contains("selected2") &&
         cellC.classList.contains("selected2")) {
       return player2;
